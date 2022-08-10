@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.canerture.cryptocurrencypricetracker.ui.signup.SignUpFragment"
+        android:label="SignUpFragment" >
+        <action
+            android:id="@+id/signUpToMain"
+            app:destination="@id/main_graph"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/signUpToSignIn"
+            app:destination="@id/signInFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.canerture.cryptocurrencypricetracker.ui.signin.SignInFragment"
+        android:label="SignInFragment" >
+        <action
+            android:id="@+id/signInToMain"
+            app:destination="@id/main_graph"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/signInToSignUp"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+
+    <include app:graph="@navigation/main_graph" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.canerture.cryptocurrencypricetracker.ui.splash.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/splashToSignUp"
+            app:destination="@id/signUpFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

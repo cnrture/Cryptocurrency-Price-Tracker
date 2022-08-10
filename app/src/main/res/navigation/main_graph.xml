@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.canerture.cryptocurrencypricetracker.ui.main.MainFragment"
+        android:label="CoinsFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/mainToSearchCoin"
+            app:destination="@id/searchCoinFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"/>
+        <action
+            android:id="@+id/mainToDetail"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchCoinFragment"
+        android:name="com.canerture.cryptocurrencypricetracker.ui.search.SearchCoinFragment"
+        android:label="SearchCoinFragment">
+        <action
+            android:id="@+id/searchCoinToDetail"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/searchCoinToMain"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.canerture.cryptocurrencypricetracker.ui.detail.DetailFragment"
+        android:label="DetailFragment">
+        <argument
+            android:name="coinId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/favouritesFragment"
+        android:name="com.canerture.cryptocurrencypricetracker.ui.favourites.FavouritesFragment"
+        android:label="FavouritesFragment" >
+        <action
+            android:id="@+id/favouritesToDetail"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+</navigation>

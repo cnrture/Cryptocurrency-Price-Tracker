@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.canerture.cryptocurrencypricetracker.domain.model.CoinDetailUI" />
+
+        <variable
+            name="currentPrice"
+            type="Double" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_coin"
+                setImage="@{model.image}"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:contentDescription="@string/coin_image"
+                app:layout_constraintBottom_toTopOf="@+id/tv_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView4"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:gravity="center"
+                android:text="@{model.name}"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/btn_favourite"
+                app:layout_constraintEnd_toEndOf="@+id/img_coin"
+                app:layout_constraintStart_toStartOf="@+id/img_coin"
+                app:layout_constraintTop_toBottomOf="@+id/img_coin"
+                tools:text="Bitcoin" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_hashing_algorithm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:text="@{model.hashingAlgorithm}"
+                android:textColor="@color/blue_dark"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_current_price2"
+                app:layout_constraintStart_toStartOf="@+id/tv_hashing_algorithm2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_hashing_algorithm2"
+                tools:text="hashingAlgorithm" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_hashing_algorithm2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:text="@string/hashing_algorithm"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tv_hashing_algorithm"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_favourite" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_current_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:text="@{'$'+String.valueOf(currentPrice)}"
+                android:textColor="@color/blue_dark"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_price_change_percentage_in_24h2"
+                app:layout_constraintStart_toStartOf="@+id/tv_hashing_algorithm2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_current_price2"
+                tools:text="currentPrice" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_current_price2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/current_price"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tv_current_price"
+                app:layout_constraintStart_toStartOf="@+id/tv_hashing_algorithm2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_hashing_algorithm" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_price_change_percentage_in_24h"
+                priceChangePercentage24h="@{model.priceChangePercentage24h}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:textColor="@color/blue_dark"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_description2"
+                app:layout_constraintStart_toStartOf="@+id/tv_hashing_algorithm2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_price_change_percentage_in_24h2"
+                tools:text="priceChangePercentage24h" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_price_change_percentage_in_24h2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/price_change_percentage_in_24h"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tv_price_change_percentage_in_24h"
+                app:layout_constraintStart_toStartOf="@+id/tv_hashing_algorithm2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_current_price" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_description"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_18sdp"
+                android:text="@{model.description}"
+                android:textColor="@color/blue_dark"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_hashing_algorithm2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_description2"
+                tools:text="description" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_description2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/description"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tv_description"
+                app:layout_constraintStart_toStartOf="@+id/tv_hashing_algorithm2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_price_change_percentage_in_24h" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_favourite"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_34sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:backgroundTint="@color/blue"
+                android:text="@string/add"
+                app:icon="@drawable/ic_favourite_selected"
+                app:iconGravity="end"
+                app:layout_constraintBottom_toTopOf="@+id/tv_hashing_algorithm2"
+                app:layout_constraintEnd_toEndOf="@+id/img_coin"
+                app:layout_constraintStart_toStartOf="@+id/img_coin"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardElevation="@dimen/_4sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_current_price"
+                app:layout_constraintStart_toEndOf="@+id/tv_current_price2"
+                app:layout_constraintTop_toTopOf="@+id/tv_current_price2">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_second"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    app:errorTextColor="@color/blue"
+                    app:hintTextColor="@color/blue">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/act_second"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:dropDownHeight="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_44sdp"
+                android:rotationX="180"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/bg_top_bar" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                app:layout_constraintEnd_toEndOf="@+id/imageView4"
+                app:layout_constraintStart_toStartOf="@+id/imageView4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back"
+                app:tint="@color/white" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                android:elevation="@dimen/_4sdp"
+                android:padding="@dimen/_100sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="@string/refresh_time"
+                app:layout_constraintBottom_toBottomOf="@+id/cv_second"
+                app:layout_constraintStart_toEndOf="@+id/cv_second"
+                app:layout_constraintTop_toTopOf="@+id/cv_second" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

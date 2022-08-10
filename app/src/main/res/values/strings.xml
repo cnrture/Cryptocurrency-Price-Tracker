@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">CryptoCoin</string>
+
+    <string name="email">E-Mail</string>
+    <string name="password">Password</string>
+
+    <string name="have_an_already_account">Have an already account?</string>
+
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="main">Main</string>
+    <string name="detail">Coin Detail</string>
+    <string name="favourites">Favourites</string>
+    <string name="search">Search Coin</string>
+
+    <string name="sign_up_successful">Sign Up Successful!</string>
+    <string name="sign_in_successful">Sign In Successful!</string>
+    <string name="add_to_favourites_successful">Coin successfully added to favorites!</string>
+
+    <string name="something_went_wrong">Something went wrong!</string>
+
+    <string name="invalid_mail">Not a valid email address. Should be your@email.com</string>
+    <string name="invalid_password">"Invalid Password"</string>
+
+    <string name="add_to_favourite">Add to Favourite</string>
+    <string name="description">Description</string>
+    <string name="price_change_percentage_in_24h">Price Change Percentage in 24h</string>
+    <string name="current_price">Current Price</string>
+    <string name="hashing_algorithm">Hashing Algorithm</string>
+    <string name="coin_image">Coin Image</string>
+    <string name="background_vector">Background Vector</string>
+    <string name="delete">Delete</string>
+    <string name="hello">Hello</string>
+    <string name="add">Add</string>
+    <string name="second">Second</string>
+    <string name="top_coins">Top Coins</string>
+    <string name="refresh_time">Refresh\nTime</string>
+</resources>
