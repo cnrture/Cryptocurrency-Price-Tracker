@@ -29,6 +29,6 @@
 
 </br>
 
-| Search |
-| ------ |
-|<img src="https://user-images.githubusercontent.com/29903779/183875567-3f15a249-4e31-4fed-8ee8-b39a6a8da6bd.jpg" width="225" height="500"/>|
+| Search | Notification |
+| ------ | ------------ |
+|<img src="https://user-images.githubusercontent.com/29903779/183875567-3f15a249-4e31-4fed-8ee8-b39a6a8da6bd.jpg" width="225" height="500"/>|<img src="https://user-images.githubusercontent.com/29903779/183882889-48253623-3869-4361-9144-da0ccd3bb21b.jpg" width="225" height="500"/>|
