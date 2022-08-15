@@ -85,4 +85,3 @@ captures/
 *.apk
 output.json
 *.log
-google-services.json

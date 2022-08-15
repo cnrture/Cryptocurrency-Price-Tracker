@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1027237698372",
+    "project_id": "cryptocurrency-price-tra-a6fa2",
+    "storage_bucket": "cryptocurrency-price-tra-a6fa2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1027237698372:android:164d2b6e5d17e7bd575511",
+        "android_client_info": {
+          "package_name": "com.canerture.cryptocurrencypricetracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1027237698372-go9lhjkbkt62fl30479e3c6f0j4e92l0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.canerture.cryptocurrencypricetracker",
+            "certificate_hash": "4a4b21d6002b8b90d57a9efa82d30f365d3149d0"
+          }
+        },
+        {
+          "client_id": "1027237698372-57gqabh4bjbmo2ngjhadv63d58cpedml.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlNPatJhmdJXvM06pLcmq0CsWmWFjhUtg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1027237698372-57gqabh4bjbmo2ngjhadv63d58cpedml.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
