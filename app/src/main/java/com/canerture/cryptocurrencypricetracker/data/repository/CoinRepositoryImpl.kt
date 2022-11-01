@@ -43,6 +43,7 @@ class CoinRepositoryImpl constructor(
 
             awaitClose {
                 channel.close()
+                job?.cancel()
             }
         }.catch {
             emit(Resource.Error(it))
